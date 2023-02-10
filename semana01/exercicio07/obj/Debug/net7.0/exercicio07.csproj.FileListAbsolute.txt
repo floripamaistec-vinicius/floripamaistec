@@ -1,0 +1,15 @@
+D:\floripamaistec\semana01\exercicio07\bin\Debug\net7.0\exercicio07.exe
+D:\floripamaistec\semana01\exercicio07\bin\Debug\net7.0\exercicio07.deps.json
+D:\floripamaistec\semana01\exercicio07\bin\Debug\net7.0\exercicio07.runtimeconfig.json
+D:\floripamaistec\semana01\exercicio07\bin\Debug\net7.0\exercicio07.dll
+D:\floripamaistec\semana01\exercicio07\bin\Debug\net7.0\exercicio07.pdb
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\exercicio07.csproj.AssemblyReference.cache
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\exercicio07.GeneratedMSBuildEditorConfig.editorconfig
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\exercicio07.AssemblyInfoInputs.cache
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\exercicio07.AssemblyInfo.cs
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\exercicio07.csproj.CoreCompileInputs.cache
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\exercicio07.dll
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\refint\exercicio07.dll
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\exercicio07.pdb
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\exercicio07.genruntimeconfig.cache
+D:\floripamaistec\semana01\exercicio07\obj\Debug\net7.0\ref\exercicio07.dll
