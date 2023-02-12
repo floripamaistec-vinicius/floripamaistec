@@ -1,0 +1,8 @@
+D:\floripamaistec\semana02\exercicio07\obj\Debug\exercicio07.csproj.AssemblyReference.cache
+D:\floripamaistec\semana02\exercicio07\obj\Debug\exercicio07.csproj.SuggestedBindingRedirects.cache
+D:\floripamaistec\semana02\exercicio07\obj\Debug\exercicio07.csproj.CoreCompileInputs.cache
+D:\floripamaistec\semana02\exercicio07\bin\Debug\exercicio07.exe.config
+D:\floripamaistec\semana02\exercicio07\bin\Debug\exercicio07.exe
+D:\floripamaistec\semana02\exercicio07\bin\Debug\exercicio07.pdb
+D:\floripamaistec\semana02\exercicio07\obj\Debug\exercicio07.exe
+D:\floripamaistec\semana02\exercicio07\obj\Debug\exercicio07.pdb
