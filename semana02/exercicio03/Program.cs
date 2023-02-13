@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using exercicio03;
+
+MensagemCelular sms = new MensagemCelular(0800, "mensagem de sms");
+sms.Executar();

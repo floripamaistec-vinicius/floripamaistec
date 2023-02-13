@@ -18,11 +18,12 @@ namespace exercicio03
         public void Executar()
         {
             Console.WriteLine("Método Executao pelo Console");
+            EnviarMensagemAoTelefone();
         }
         private void EnviarMensagemAoTelefone()
         {
             Console.WriteLine("Método privado executado na classe");
-            Console.WriteLine("Telefone: {0}, Mensagem: {0}", _telefone, _mensagem);
+            Console.WriteLine("Telefone: {0}, Mensagem: {1}", _telefone, _mensagem);
         }
     }
 }
