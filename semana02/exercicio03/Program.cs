@@ -1,4 +1,4 @@
 ﻿using exercicio03;
 
-MensagemCelular sms = new MensagemCelular(0800, "mensagem de sms");
+MensagemCelular sms = new MensagemCelular(99999999, "SMS");
 sms.Executar();
