@@ -14,8 +14,8 @@ namespace exercicio08
         public int idade;
         public Pessoa(string nome, DateTime dataNascimento)
         {
-            Nome = nome;
-            DataNascimento = dataNascimento;
+            this.Nome = nome;
+            this.DataNascimento = dataNascimento;
         }
         private void CalcularIdade()
         {
