@@ -4,7 +4,7 @@ using System.Net.Sockets;
 // Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 
-List<Carro> listCarro = new List<Carro>();
+List<Carro> listaDeCarros = new List<Carro>();
 
 int opcao;
 do
@@ -17,9 +17,10 @@ do
     Console.WriteLine("5 - Sair");
     opcao = int.Parse(Console.ReadLine());
     if (opcao == 1) { CadastrarCarro(); }
-    else if (opcao == 2) { MarcarEntrada(); }
+    else if (opcao == 2) { GerarTicket(); }
     else if (opcao == 3) { FecharTicket(); }
     else if (opcao == 4) { Historico(); }
+    else if (opcao == 5) { break; }
     else { Console.WriteLine("Opção inexistente. Digite novamente."); }
 } while (opcao != 5);
 
@@ -33,93 +34,72 @@ void CadastrarCarro() {
     carro.cor = Console.ReadLine();
     Console.WriteLine("Marca:");
     carro.marca = Console.ReadLine();
-    listCarro.Add(carro);
+    listaDeCarros.Add(carro);
 }
-
-void MarcarEntrada()
-{
-    bool entrada = true;
-    Carro carroCadastrado = ObterCarro();
-    verificarTicketAtivo(carroCadastrado, entrada);
-}
-
-void FecharTicket()
-{
-    bool entrada = false;
-    Carro carroCadastrado = ObterCarro();
-    verificarTicketAtivo(carroCadastrado, entrada);
-}
-
-void Historico()
-{
-    Carro carroCadastrado = ObterCarro();
-    foreach (Ticket ticket in carroCadastrado.listTicket) {
-        Console.WriteLine(String.Format("Entrada: {0} --- Saída: {1} --- Valores: {2:C}", ticket.entrada, ticket.saida, Convert.ToInt32(ticket.CalcularValor())));
-    }
-
-}
-
 
 Carro ObterCarro()
 {
     Console.WriteLine("Placa:");
     string buscarPlaca = Console.ReadLine();
-    foreach (Carro carro in listCarro)
+    foreach (Carro carro in listaDeCarros)
     {
-        if(carro.placa == buscarPlaca)
+        if (carro.placa == buscarPlaca)
         {
             return carro;
-        } else {
-            Console.WriteLine("Veículo não cadastrado.");
-            CadastrarCarro();
         }
+        else { Console.WriteLine("Veículo não cadastrado"); }
     }
     return null;
 }
 
-void verificarTicketAtivo(Carro carroCadastrado, bool entrada)
+void GerarTicket()
 {
-    foreach (Ticket ticket in carroCadastrado.listTicket)
+    Carro carro = ObterCarro();
+    if (carro != null)
     {
-        if (entrada == true)
+        foreach (Ticket ticket in carro.listaDeTickets)
         {
-            if (ticket.ativo == false)
+            if (ticket.ativo != true)
             {
-                gerarTicket(carroCadastrado, entrada, ticket);
+                Ticket novoTicket = new Ticket();
+                novoTicket.entrada = DateTime.Now;
+                novoTicket.ativo = true;
+                carro.listaDeTickets.Add(novoTicket);
             }
-            else
-            {
-                Console.WriteLine("O veículo com placa {0} já possui ticket ativo.", carroCadastrado.placa);
-            }
-        } else
-        {
-            if (ticket.ativo == false)
-            {
-                Console.WriteLine("O veículo com placa {0} não possui ticket ativo.", carroCadastrado.placa);
-            }
-            else
-            {
-                gerarTicket(carroCadastrado, entrada, ticket);
-            }
+            else { Console.WriteLine("Ticket Ativo == True"); }
         }
     }
+    else { Console.WriteLine("Veículo não cadastrado"); }
 }
 
-void gerarTicket(Carro carroCadastrado, bool entrada, Ticket ticket)
+void Historico()
 {
-    if (entrada == true)
+    Carro carro = ObterCarro();
+    if (carro != null)
     {
-        Ticket cadastrarTicket = new Ticket();
-        cadastrarTicket.entrada = DateTime.Now;
-        cadastrarTicket.ativo = true;
-        carroCadastrado.listTicket.Add(ticket);
-        Console.WriteLine("Ticket {0}/{1} criado.", carroCadastrado.placa, carroCadastrado.listTicket.Count);
-    } else
-    {
-        ticket.saida = DateTime.Now;
-        carroCadastrado.listTicket.Add(ticket);
-        Console.WriteLine("Tempo no Estacionamento: {0}", ticket.CalcularTempo());
-        Console.WriteLine("Valor no Estacionamento: {0}", ticket.CalcularValor());
+        foreach (Ticket ticket in carro.listaDeTickets)
+        {
+            Console.WriteLine(String.Format("Entrada: {0} --- Saida: {1} --- Valores Pagos: {2:C}", ticket.entrada, ticket.saida, Convert.ToInt32(ticket.CalcularValor())));
+        }
     }
-    
+    else { Console.WriteLine("Veículo não cadastrado"); }
+}
+
+void FecharTicket()
+{
+    Carro carro = ObterCarro();
+    if (carro != null)
+    {
+        foreach (Ticket ticket in carro.listaDeTickets)
+        {
+            if (ticket.ativo == true)
+            {
+                ticket.saida = DateTime.Now;
+                ticket.ativo = false;
+                carro.listaDeTickets.Add(ticket);
+            }
+            else { Console.WriteLine("Ticket Ativo != True"); }
+        }
+    }
+    else { Console.WriteLine("Veículo não cadastrado"); }
 }

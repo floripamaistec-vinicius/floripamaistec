@@ -12,9 +12,9 @@ namespace pareAqui
         public string modelo { get; set; }
         public string cor { get; set; }
         public string marca { get; set; }
-        public List<Ticket> listTicket { get; set; }
+        public List<Ticket> listaDeTickets { get; set; }
         public Carro() {
-            listTicket = new List<Ticket>();
+            listaDeTickets = new List<Ticket>();
         }
         public Carro(string Placa, string Modelo, string Cor, string Marca) :this()
         {
