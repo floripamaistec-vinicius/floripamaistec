@@ -57,16 +57,26 @@ void GerarTicket()
     Carro carro = ObterCarro();
     if (carro != null)
     {
-        foreach (Ticket ticket in carro.listaDeTickets)
+        if (carro.listaDeTickets.Count == 0)
         {
-            if (ticket.ativo != true)
+            Ticket novoTicket = new Ticket();
+            novoTicket.entrada = DateTime.Now;
+            novoTicket.ativo = true;
+            carro.listaDeTickets.Add(novoTicket);
+        }
+        else
+        {
+            foreach (Ticket ticket in carro.listaDeTickets)
             {
-                Ticket novoTicket = new Ticket();
-                novoTicket.entrada = DateTime.Now;
-                novoTicket.ativo = true;
-                carro.listaDeTickets.Add(novoTicket);
+                if (ticket.ativo != true)
+                {
+                    Ticket novoTicket = new Ticket();
+                    novoTicket.entrada = DateTime.Now;
+                    novoTicket.ativo = true;
+                    carro.listaDeTickets.Add(novoTicket);
+                }
+                else { Console.WriteLine("Ticket Ativo == True"); }
             }
-            else { Console.WriteLine("Ticket Ativo == True"); }
         }
     }
     else { Console.WriteLine("Veículo não cadastrado"); }
@@ -90,13 +100,12 @@ void FecharTicket()
     Carro carro = ObterCarro();
     if (carro != null)
     {
-        foreach (Ticket ticket in carro.listaDeTickets)
+        foreach (Ticket ticket in carro.listaDeTickets.ToList())
         {
             if (ticket.ativo == true)
             {
                 ticket.saida = DateTime.Now;
                 ticket.ativo = false;
-                carro.listaDeTickets.Add(ticket);
             }
             else { Console.WriteLine("Ticket Ativo != True"); }
         }
