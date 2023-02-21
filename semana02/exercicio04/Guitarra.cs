@@ -8,10 +8,10 @@ namespace exercicio04
 {
     public class Guitarra
     {
-        private static string _afinacao { get; set; }
+        private static string afinacao { get; set; }
         static Guitarra()
         {
-            _afinacao = "sol";
+            afinacao = "sol";
         }
         private static void TomAfinado()
         {
@@ -23,7 +23,7 @@ namespace exercicio04
         }
         public void Tocar(string AfinacaoAtual)
         {
-            _afinacao = AfinacaoAtual;
+            afinacao = AfinacaoAtual;
             TomAfinado();
         }
     }

@@ -8,21 +8,21 @@ namespace exercicio05
 {
     public class Cobrar
     {
-        private decimal Valor { get; set; }
-        private decimal Multa { get; set; }
+        private decimal _valor { get; set; }
+        private decimal _multa { get; set; }
         public Cobrar(decimal Valor, decimal Multa)
         {
-            this.Valor = Valor;
-            this.Multa = Multa;
+            this._valor = Valor;
+            this._multa = Multa;
         }
         private decimal CalcularMulta()
         {
-            decimal SomaValor = (Valor + Multa);
+            decimal SomaValor = (_valor + _multa);
             return SomaValor;
         }
         public void Calcular()
         {
-            Console.WriteLine("Valor cobrado {0}, Multa {1}, Soma Valor {2}", Valor, Multa, CalcularMulta());
+            Console.WriteLine("Valor cobrado {0}, Multa {1}, Soma Valor {2}", _valor, _multa, CalcularMulta());
         }
     }
 }

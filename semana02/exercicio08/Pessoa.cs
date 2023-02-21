@@ -9,19 +9,19 @@ namespace exercicio08
 {
     public class Pessoa
     {
-        public string Nome { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public string nome { get; set; }
+        public DateTime dataNascimento { get; set; }
         public int idade;
-        public Pessoa(string nome, DateTime dataNascimento)
+        public Pessoa(string Nome, DateTime DataNascimento)
         {
-            this.Nome = nome;
-            this.DataNascimento = dataNascimento;
+            this.nome = nome;
+            this.dataNascimento = dataNascimento;
         }
         private void CalcularIdade()
         {
             var dataAtual = DateTime.Now;
-            idade = dataAtual.Year - DataNascimento.Year;
-            if (DataNascimento > dataAtual.AddYears(-idade))
+            idade = dataAtual.Year - dataNascimento.Year;
+            if (dataNascimento > dataAtual.AddYears(-idade))
             {
                 idade--;
             }
@@ -30,7 +30,7 @@ namespace exercicio08
         {
             CalcularIdade();
 
-            Console.WriteLine($"{Nome} tem a idade de {idade} anos.");
+            Console.WriteLine($"{nome} tem a idade de {idade} anos.");
         }
     }
 }
