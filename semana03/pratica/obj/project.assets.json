@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\floripamaistec\\semana03\\pratica\\pratica\\pratica.csproj",
+      "projectUniqueName": "D:\\floripamaistec\\semana03\\pratica\\pratica.csproj",
       "projectName": "pratica",
-      "projectPath": "D:\\floripamaistec\\semana03\\pratica\\pratica\\pratica.csproj",
+      "projectPath": "D:\\floripamaistec\\semana03\\pratica\\pratica.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\floripamaistec\\semana03\\pratica\\pratica\\obj\\",
+      "outputPath": "D:\\floripamaistec\\semana03\\pratica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

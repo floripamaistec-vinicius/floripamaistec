@@ -35,7 +35,7 @@ namespace pratica
         }
         public void ImprimirVeiculo()
         {
-            Console.WriteLine("ID: {} Cor: {} KM: {} Velocidade: {} Tipo do Veículo: {}", ID, Cor, KM, Velociade, TipoVeiculo);
+            Console.WriteLine("ID: {0} Cor: {1} KM: {2} Velocidade: {3} Tipo do Veículo: {4}", ID, Cor, KM, Velociade, TipoVeiculo);
         }
     }
 }
