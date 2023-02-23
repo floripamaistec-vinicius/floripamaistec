@@ -6,9 +6,9 @@ listaDePerguntas.Add("Sobrenome: ");
 listaDePerguntas.Add("Idade: ");
 listaDePerguntas.Add("Cor Favorita: ");
 
-for (int i = 0; i < listaDePerguntas.Count; i++)
+foreach(string pergunta in listaDePerguntas)
 {
-    Console.WriteLine(listaDePerguntas[i]);
+    Console.WriteLine(pergunta);
     listaDeRespostas.Add(Console.ReadLine());
 }
 
