@@ -8,20 +8,20 @@ namespace pareAqui
 {
     public class Carro
     {
-        public string placa { get; set; }
-        public string modelo { get; set; }
-        public string cor { get; set; }
-        public string marca { get; set; }
+        public string Placa { get; set; }
+        public string Modelo { get; set; }
+        public string Cor { get; set; }
+        public string Marca { get; set; }
         public List<Ticket> listaDeTickets { get; set; }
         public Carro() {
             listaDeTickets = new List<Ticket>();
         }
-        public Carro(string Placa, string Modelo, string Cor, string Marca) :this()
+        public Carro(string placa, string modelo, string cor, string marca) :this()
         {
-            placa = Placa;
-            modelo = Modelo;
-            cor = Cor;
-            marca = Marca;
+            Placa = placa;
+            Modelo = modelo;
+            Cor = cor;
+            Marca = marca;
         }
     }
 }

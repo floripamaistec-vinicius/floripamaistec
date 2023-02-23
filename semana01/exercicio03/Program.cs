@@ -1,22 +1,22 @@
-﻿List<float> listaDeNotas = new List<float>();
+﻿List<double> ListaDeNotas = new List<double>();
 
-for (int iteradorEntradaNaListaDeNotas = 0; iteradorEntradaNaListaDeNotas < 3; iteradorEntradaNaListaDeNotas++)
+for (int i = 0; i < 3; i++)
 {
-    Console.WriteLine($"Nota {iteradorEntradaNaListaDeNotas + 1}:");
-    listaDeNotas.Add(float.Parse(Console.ReadLine()));
+    Console.WriteLine($"Nota {i + 1}:");
+    ListaDeNotas.Add(double.Parse(Console.ReadLine()));
 }
 
-float media = listaDeNotas.Sum() / 3;
+double Media = ListaDeNotas.Sum()/3;
 
-if (media >= 6)
+if (Media >= 6)
 {
-    Console.WriteLine($"Aluno aprovado com média: {media}");
+    Console.WriteLine($"Aluno aprovado com média: {Media}");
 }
-else if (media >= 5)
+else if (Media >= 5)
 {
-    Console.WriteLine($"Aluno em recuperação com média: {media}");
+    Console.WriteLine($"Aluno em recuperação com média: {Media}");
 }
 else
 {
-    Console.WriteLine($"Aluno reprovado com média: {media}");
+    Console.WriteLine($"Aluno reprovado com média: {Media}");
 }

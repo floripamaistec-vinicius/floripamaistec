@@ -10,15 +10,14 @@ namespace exercicio05
     {
         private decimal _valor { get; set; }
         private decimal _multa { get; set; }
-        public Cobrar(decimal Valor, decimal Multa)
+        public Cobrar(decimal valor, decimal multa)
         {
-            this._valor = Valor;
-            this._multa = Multa;
+            this._valor = valor;
+            this._multa = multa;
         }
         private decimal CalcularMulta()
         {
-            decimal SomaValor = (_valor + _multa);
-            return SomaValor;
+            return (_valor + _multa);
         }
         public void Calcular()
         {

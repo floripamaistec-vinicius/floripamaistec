@@ -5,9 +5,9 @@ using System.Security.Cryptography.X509Certificates;
 // Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 
-List<Carro> listaDeCarros = new List<Carro>();
+List<Carro> ListaDeCarros = new List<Carro>();
 
-string opcao;
+string Opcao;
 do
 {
     Console.WriteLine("Bem vindo ao pareAqui, escolha uma opção:");
@@ -16,14 +16,14 @@ do
     Console.WriteLine("3 - Marcar Saída");
     Console.WriteLine("4 - Consultar Histórico");
     Console.WriteLine("5 - Sair");
-    opcao = Console.ReadLine();
-    if (opcao == "1") { CadastrarCarro(); }
-    else if (opcao == "2") { GerarTicket(); }
-    else if (opcao == "3") { FecharTicket(); }
-    else if (opcao == "4") { Historico(); }
-    else if (opcao == "5") { break; }
+    Opcao = Console.ReadLine();
+    if (Opcao == "1") { CadastrarCarro(); }
+    else if (Opcao == "2") { GerarTicket(); }
+    else if (Opcao == "3") { FecharTicket(); }
+    else if (Opcao == "4") { Historico(); }
+    else if (Opcao == "5") { break; }
     else { Console.WriteLine("Opção inexistente. Digite novamente."); }
-} while (opcao != "5");
+} while (Opcao != "5");
 
 void CadastrarCarro() {
     Carro carro = new Carro();
@@ -35,7 +35,7 @@ void CadastrarCarro() {
     carro.cor = Console.ReadLine();
     Console.WriteLine("Marca:");
     carro.marca = Console.ReadLine();
-    listaDeCarros.Add(carro);
+    ListaDeCarros.Add(carro);
 }
 
 Carro ObterCarro()
@@ -104,11 +104,11 @@ void FecharTicket()
     }
     foreach (Ticket ticket in carro.listaDeTickets)
     {
-        if (ticket.ativo == true)
+        if (ticket.Ativo == true)
         {
-            ticket.saida = DateTime.Now;
-            ticket.ativo = false;
-            Console.WriteLine("Saída Placa: {0}", carro.placa);
+            ticket.Saida = DateTime.Now;
+            ticket.Ativo = false;
+            Console.WriteLine("Saída Placa: {0}", carro.Placa);
         }
     }
 }

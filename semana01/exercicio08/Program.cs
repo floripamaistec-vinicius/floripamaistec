@@ -1,12 +1,12 @@
-﻿static int CalculaSequenciaFibonacciRecursivamente(int enesimoTermo)
+﻿static int CalculaSequenciaFibonacciRecursivamente(int EnesimoTermo)
 {
-    if (enesimoTermo == 0 || enesimoTermo == 1)
+    if (EnesimoTermo == 0 || EnesimoTermo == 1)
     {
-        return enesimoTermo;
+        return EnesimoTermo;
     }
     else
     {
-        return CalculaSequenciaFibonacciRecursivamente(enesimoTermo - 1) + CalculaSequenciaFibonacciRecursivamente(enesimoTermo - 2);
+        return CalculaSequenciaFibonacciRecursivamente(EnesimoTermo - 1) + CalculaSequenciaFibonacciRecursivamente(EnesimoTermo - 2);
     }
 }
 
@@ -16,7 +16,7 @@ int informaValorDoParametroNoMetodo()
     return int.Parse(Console.ReadLine());
 }
 
-for (int iterador = informaValorDoParametroNoMetodo(); iterador > 0; iterador--)
+for (int i = informaValorDoParametroNoMetodo(); i > 0; i--)
 {
-    Console.WriteLine("{0}º Termo: {1}", iterador, CalculaSequenciaFibonacciRecursivamente(iterador - 1));
+    Console.WriteLine("{0}º Termo: {1}", i, CalculaSequenciaFibonacciRecursivamente(i - 1));
 }

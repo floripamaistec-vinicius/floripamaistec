@@ -1,19 +1,19 @@
 ﻿Console.WriteLine("Salário bruto: ");
-float salarioBruto = float.Parse(Console.ReadLine());
+double SalarioBruto = double.Parse(Console.ReadLine());
 
-if (salarioBruto <= 900)
+if (SalarioBruto <= 900)
 {
-    Console.WriteLine("Imposto ZERO.");
+    Console.WriteLine("Sem Imposto");
 }
-else if (salarioBruto <= 1500)
+else if (SalarioBruto <= 1500)
 {
-    Console.WriteLine($"Salário: R$ {salarioBruto}. Imposto: R$ {salarioBruto * 0.05}");
+    Console.WriteLine($"Salário: R$ {SalarioBruto}. Imposto: R$ {SalarioBruto * 0.05}");
 }
-else if (salarioBruto <= 2500)
+else if (SalarioBruto <= 2500)
 {
-    Console.WriteLine($"Salário: R$ {salarioBruto}. Imposto: R$ {salarioBruto * 0.1}");
+    Console.WriteLine($"Salário: R$ {SalarioBruto}. Imposto: R$ {SalarioBruto * 0.1}");
 }
 else
 {
-    Console.WriteLine($"Salário: R$ {salarioBruto}. Imposto: R$ {salarioBruto * 0.2}");
+    Console.WriteLine($"Salário: R$ {SalarioBruto}. Imposto: R$ {SalarioBruto * 0.2}");
 }

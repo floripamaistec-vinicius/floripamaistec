@@ -8,12 +8,12 @@ namespace exercicio03
 {
     public class MensagemCelular
     {
-        public int telefone { get; set; }
-        public string mensagem { get; set; }
-        public MensagemCelular(int Telefone, string Mensagem)
+        public int Telefone { get; set; }
+        public string Mensagem { get; set; }
+        public MensagemCelular(int telefone, string mensagem)
         {
-            this.telefone = Telefone;
-            this.mensagem = Mensagem;
+            this.Telefone = telefone;
+            this.Mensagem = mensagem;
         }
         public void Executar()
         {
@@ -23,7 +23,7 @@ namespace exercicio03
         private void EnviarMensagemAoTelefone()
         {
             Console.WriteLine("Método privado executado na classe");
-            Console.WriteLine("Telefone: {0}, Mensagem: {1}", telefone, mensagem);
+            Console.WriteLine("Telefone: {0}, Mensagem: {1}", Telefone, Mensagem);
         }
     }
 }

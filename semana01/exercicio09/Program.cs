@@ -1,4 +1,4 @@
-﻿List<float> ListaDeTransacoes = new List<float>();
+﻿List<double> ListaDeTransacoes = new List<double>();
 
 Console.WriteLine("Bem vindo ao Banco, por favor selecione uma opção para continuar: ");
 
@@ -9,19 +9,19 @@ static void MenuDoBanco()
     Console.WriteLine("3 - Sair");
 }
 
-int OpcaoDoMenuSelecionada()
+string OpcaoDoMenuSelecionada()
 {
-    return int.Parse(Console.ReadLine());
+    return Console.ReadLine();
 }
 void Transacao()
 {
     Console.WriteLine("Qual o valor? ");
-    ListaDeTransacoes.Add(float.Parse(Console.ReadLine()));
+    ListaDeTransacoes.Add(double.Parse(Console.ReadLine()));
 }
 
 void Extrato()
 {
-    foreach (float Transacao in ListaDeTransacoes)
+    foreach (double Transacao in ListaDeTransacoes)
     {
         Console.WriteLine("Valor da Transação Efetuada: {0}", Transacao);
     }
@@ -30,16 +30,16 @@ void Extrato()
 
 
 MenuDoBanco();
-int opcacaoSelecionada = OpcaoDoMenuSelecionada();
+string OpcacaoSelecionada = OpcaoDoMenuSelecionada();
 
 do
 {
-    switch (opcacaoSelecionada)
+    switch (OpcacaoSelecionada)
     {
-        case 1: Transacao(); break;
-        case 2: Extrato(); break;
+        case "1": Transacao(); break;
+        case "2": Extrato(); break;
         default: Console.WriteLine("Opção Inexistente"); break;
     }
     MenuDoBanco();
-    opcacaoSelecionada = OpcaoDoMenuSelecionada();
-} while (opcacaoSelecionada != 3);
+    OpcacaoSelecionada = OpcaoDoMenuSelecionada();
+} while (OpcacaoSelecionada != "3");

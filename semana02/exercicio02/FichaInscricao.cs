@@ -9,22 +9,22 @@ namespace exercicio02
     public class FichaInscricao
     {
         private int _id;
-        public string nome { get; set; }
-        public DateTime dataNascimento { get; set; }
-        public bool menorIdade { get; set; }
-        public FichaInscricao(int id, string Nome, DateTime DataNascimento, bool MenorIdade)
+        public string Nome { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public bool MenorIdade { get; set; }
+        public FichaInscricao(int id, string nome, DateTime dataNascimento, bool menorIdade)
         {
             this._id = id;
-            this.nome = Nome;
-            this.dataNascimento = DataNascimento;
-            this.menorIdade = MenorIdade;
+            this.Nome = nome;
+            this.DataNascimento = dataNascimento;
+            this.MenorIdade = menorIdade;
         }
         public void ImprimeInscricao()
         {
             Console.WriteLine("ID: {0}", _id);
-            Console.WriteLine("Nome: {0}", nome);
-            Console.WriteLine("Data de Nascimento: {0}", dataNascimento);
-            if (menorIdade == true) { Console.WriteLine("Maior de Idade"); }
+            Console.WriteLine("Nome: {0}", Nome);
+            Console.WriteLine("Data de Nascimento: {0}", DataNascimento);
+            if (MenorIdade == true) { Console.WriteLine("Maior de Idade"); }
             else Console.WriteLine("Menor de Idade.");
         }
     }

@@ -1,18 +1,18 @@
-﻿List<string> listaDePerguntas = new List<string>();
-List<string> listaDeRespostas = new List<string>();
+﻿List<string> ListaDePerguntas = new List<string>();
+List<string> ListaDeRespostas = new List<string>();
 
-listaDePerguntas.Add("Nome: ");
-listaDePerguntas.Add("Sobrenome: ");
-listaDePerguntas.Add("Idade: ");
-listaDePerguntas.Add("Cor Favorita: ");
+ListaDePerguntas.Add("Nome: ");
+ListaDePerguntas.Add("Sobrenome: ");
+ListaDePerguntas.Add("Idade: ");
+ListaDePerguntas.Add("Cor Favorita: ");
 
-foreach(string pergunta in listaDePerguntas)
+foreach(string pergunta in ListaDePerguntas)
 {
     Console.WriteLine(pergunta);
-    listaDeRespostas.Add(Console.ReadLine());
+    ListaDeRespostas.Add(Console.ReadLine());
 }
 
-for (int i = 0; i < listaDeRespostas.Count; i++)
+for (int i = 0; i < ListaDeRespostas.Count; i++)
 {
-    Console.WriteLine(listaDePerguntas[i] + listaDeRespostas[i]);
+    Console.WriteLine(ListaDeRespostas[i] + ListaDeRespostas[i]);
 }

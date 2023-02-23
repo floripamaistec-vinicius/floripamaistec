@@ -9,28 +9,28 @@ namespace exercicio08
 {
     public class Pessoa
     {
-        public string nome { get; set; }
-        public DateTime dataNascimento { get; set; }
-        public int idade;
-        public Pessoa(string Nome, DateTime DataNascimento)
+        public string Nome { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public int Idade;
+        public Pessoa(string nome, DateTime dataNascimento)
         {
-            this.nome = nome;
-            this.dataNascimento = dataNascimento;
+            this.Nome = nome;
+            this.DataNascimento = dataNascimento;
         }
         private void CalcularIdade()
         {
             var dataAtual = DateTime.Now;
-            idade = dataAtual.Year - dataNascimento.Year;
-            if (dataNascimento > dataAtual.AddYears(-idade))
+            Idade = dataAtual.Year - DataNascimento.Year;
+            if (DataNascimento > dataAtual.AddYears(-Idade))
             {
-                idade--;
+                Idade--;
             }
         }
         public void MostrarIdade()
         {
             CalcularIdade();
 
-            Console.WriteLine($"{nome} tem a idade de {idade} anos.");
+            Console.WriteLine($"{Nome} tem a idade de {Idade} anos.");
         }
     }
 }

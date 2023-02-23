@@ -8,20 +8,20 @@ namespace pareAqui
 {
     public class Ticket
     {
-        public DateTime entrada { get; set; }
-        public DateTime saida { get; set; }
-        public bool ativo { get; set; }
+        public DateTime Entrada { get; set; }
+        public DateTime Saida { get; set; }
+        public bool Ativo { get; set; }
 
         public Ticket() { }
-        public Ticket(DateTime Entrada, DateTime Saida, bool Ativo) :this()
+        public Ticket(DateTime entrada, DateTime saida, bool ativo) :this()
         {
-            entrada = Entrada;
-            saida = Saida;
-            ativo = Ativo;
+            Entrada = entrada;
+            Saida = saida;
+            Ativo = ativo;
         }
         public double CalcularTempo()
         {
-            TimeSpan tempo = saida - entrada;
+            TimeSpan tempo = Saida - Entrada;
             return tempo.TotalMinutes;
         }
         public double CalcularValor()

@@ -1,7 +1,7 @@
 ﻿Console.WriteLine("Digite o número que será tabuado:");
-int numeroQueSeraTabuado = int.Parse(Console.ReadLine());
+int NumeroQueSeraTabuado = int.Parse(Console.ReadLine());
 
-for (int iterador = 0; iterador <= 10; iterador++)
+for (int i = 0; i <= 10; i++)
 {
-    Console.WriteLine($"{numeroQueSeraTabuado} x {iterador} = {numeroQueSeraTabuado * iterador}");
+    Console.WriteLine($"{NumeroQueSeraTabuado} x {i} = {NumeroQueSeraTabuado * i}");
 }

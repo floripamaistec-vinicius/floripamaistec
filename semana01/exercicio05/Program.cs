@@ -1,18 +1,18 @@
-﻿List<float> ladosDoTriangulo = new List<float>();
+﻿List<double> LadosDoTriangulo = new List<double>();
 
-for (int iterador = 0; iterador < 3; iterador++)
+for (int i = 0; i < 3; i++)
 {
-    Console.WriteLine($"Valor do {iterador + 1}º lado:");
-    ladosDoTriangulo.Add(float.Parse(Console.ReadLine()));
+    Console.WriteLine($"Valor do {i + 1}º lado:");
+    LadosDoTriangulo.Add(double.Parse(Console.ReadLine()));
 }
 
-if (ladosDoTriangulo[0] < (ladosDoTriangulo[1] + ladosDoTriangulo[2]) || ladosDoTriangulo[1] < (ladosDoTriangulo[0] + ladosDoTriangulo[2]) || ladosDoTriangulo[2] < (ladosDoTriangulo[0] + ladosDoTriangulo[2]))
+if (LadosDoTriangulo[0] < (LadosDoTriangulo[1] + LadosDoTriangulo[2]) || LadosDoTriangulo[1] < (LadosDoTriangulo[0] + LadosDoTriangulo[2]) || LadosDoTriangulo[2] < (LadosDoTriangulo[0] + LadosDoTriangulo[2]))
 {
-    if (ladosDoTriangulo[0] == ladosDoTriangulo[1] && ladosDoTriangulo[0] == ladosDoTriangulo[2])
+    if (LadosDoTriangulo[0] == LadosDoTriangulo[1] && LadosDoTriangulo[0] == LadosDoTriangulo[2])
     {
         Console.WriteLine("Triângulo Equilátero");
     }
-    else if (ladosDoTriangulo[0] != ladosDoTriangulo[1] && ladosDoTriangulo[0] != ladosDoTriangulo[2] && ladosDoTriangulo[1] != ladosDoTriangulo[2])
+    else if (LadosDoTriangulo[0] != LadosDoTriangulo[1] && LadosDoTriangulo[0] != LadosDoTriangulo[2] && LadosDoTriangulo[1] != LadosDoTriangulo[2])
     {
         Console.WriteLine("Triângulo Escaleno");
     }
