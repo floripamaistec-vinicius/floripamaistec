@@ -6,13 +6,13 @@ listaDePerguntas.Add("Sobrenome: ");
 listaDePerguntas.Add("Idade: ");
 listaDePerguntas.Add("Cor Favorita: ");
 
-for (int iteradorEntrada = 0; iteradorEntrada < listaDePerguntas.Count; iteradorEntrada++)
+foreach (String pergunta in listaDePerguntas)
 {
-    Console.WriteLine(listaDePerguntas[iteradorEntrada]);
+    Console.WriteLine(pergunta);
     listaDeRespostas.Add(Console.ReadLine());
 }
 
-for (int iteradorSaida = 0; iteradorSaida < listaDeRespostas.Count; iteradorSaida++)
+for (int indexListaDeResposta = 0; indexListaDeResposta < listaDeRespostas.Count; indexListaDeResposta++)
 {
-    Console.WriteLine(listaDePerguntas[iteradorSaida] + listaDeRespostas[iteradorSaida]);
+    Console.WriteLine(listaDePerguntas[indexListaDeResposta] + listaDeRespostas[indexListaDeResposta]);
 }

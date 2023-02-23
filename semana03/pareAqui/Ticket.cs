@@ -13,7 +13,8 @@ namespace pareAqui
         public bool ativo { get; set; }
 
         public Ticket() { }
-        public Ticket(DateTime Entrada, DateTime Saida, bool Ativo) :this() {
+        public Ticket(DateTime Entrada, DateTime Saida, bool Ativo) :this()
+        {
             entrada = Entrada;
             saida = Saida;
             ativo = Ativo;
