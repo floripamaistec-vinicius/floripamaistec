@@ -28,13 +28,13 @@ do
 void CadastrarCarro() {
     Carro carro = new Carro();
     Console.WriteLine("Placa:");
-    carro.placa = Console.ReadLine();
+    carro.Placa = Console.ReadLine();
     Console.WriteLine("Modelo:");
-    carro.modelo = Console.ReadLine();
+    carro.Modelo = Console.ReadLine();
     Console.WriteLine("Cor:");
-    carro.cor = Console.ReadLine();
+    carro.Cor = Console.ReadLine();
     Console.WriteLine("Marca:");
-    carro.marca = Console.ReadLine();
+    carro.Marca = Console.ReadLine();
     ListaDeCarros.Add(carro);
 }
 
@@ -42,9 +42,9 @@ Carro ObterCarro()
 {
     Console.WriteLine("Placa:");
     string buscarPlaca = Console.ReadLine();
-    foreach (Carro carro in listaDeCarros)
+    foreach (Carro carro in ListaDeCarros)
     {
-        if (buscarPlaca == carro.placa)
+        if (buscarPlaca == carro.Placa)
         {
             return carro;
         }
@@ -55,25 +55,26 @@ Carro ObterCarro()
 
 void GerarTicket()
 {
+    //try catch aqui
     Carro carro = ObterCarro();
     if (carro.listaDeTickets.Count == 0)
     {
         Ticket novoTicket = new Ticket();
-        novoTicket.entrada = DateTime.Now;
-        novoTicket.ativo = true;
+        novoTicket.Entrada = DateTime.Now;
+        novoTicket.Ativo = true;
         carro.listaDeTickets.Add(novoTicket);
     }
     else
     {
         foreach (Ticket ticket in carro.listaDeTickets)
         {
-            if (ticket.ativo = false)
+            if (ticket.Ativo = false)
             {
                 Ticket novoTicket = new Ticket();
-                novoTicket.entrada = DateTime.Now;
-                novoTicket.ativo = true;
+                novoTicket.Entrada = DateTime.Now;
+                novoTicket.Ativo = true;
                 carro.listaDeTickets.Add(novoTicket);
-                Console.WriteLine("Entrada Placa: {0}", carro.placa);
+                Console.WriteLine("Entrada Placa: {0}", carro.Placa);
             }
             else { Console.WriteLine("Ticket Ativo == True"); }
         }
@@ -90,7 +91,7 @@ void Historico()
     }
     foreach (Ticket ticket in carro.listaDeTickets)
     {
-        Console.WriteLine(String.Format("Entrada: {0} --- Saida: {1} --- Valores Pagos: {2:C}", ticket.entrada, ticket.saida, Convert.ToInt32(ticket.CalcularValor())));
+        Console.WriteLine(String.Format("Entrada: {0} --- Saida: {1} --- Valores Pagos: {2:C}", ticket.Entrada, ticket.Saida, Convert.ToInt32(ticket.CalcularValor())));
     }
 }
 
