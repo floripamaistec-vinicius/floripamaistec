@@ -1,8 +1,10 @@
-﻿internal class Program
+﻿using exercicio07;
+
+public class Program
 {
     public static void Main(string[] args)
     {
-        exercicio07.exercicio07.Animacao();
-        exercicio07.exercicio07.Animacao("Divertidamente");
+        Animacao.animacao();
+        Animacao.animacao("Divertidamente");
     }
 }

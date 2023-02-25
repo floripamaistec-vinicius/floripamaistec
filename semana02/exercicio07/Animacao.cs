@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace exercicio07
 {
-    public static class exercicio07
+    public static class Animacao
     {
-        public static void Animacao()
+        public static void animacao()
         {
             Console.WriteLine("Animação Frozen");
         }
-        public static void Animacao(string tipo)
+        public static void animacao(string tipo)
         {
             Console.WriteLine("Animação {0}",tipo);
         }

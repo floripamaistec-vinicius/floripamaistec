@@ -2,29 +2,12 @@
 using System.Globalization;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml;
 // Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
-
 List<Carro> ListaDeCarros = new List<Carro>();
 
-string Opcao;
-do
-{
-    Console.WriteLine("Bem vindo ao pareAqui, escolha uma opção:");
-    Console.WriteLine("1 - Cadastrar Carro");
-    Console.WriteLine("2 - Marcar Entrada");
-    Console.WriteLine("3 - Marcar Saída");
-    Console.WriteLine("4 - Consultar Histórico");
-    Console.WriteLine("5 - Sair");
-    Opcao = Console.ReadLine();
-    if (Opcao == "1") { CadastrarCarro(); }
-    else if (Opcao == "2") { GerarTicket(); }
-    else if (Opcao == "3") { FecharTicket(); }
-    else if (Opcao == "4") { Historico(); }
-    else if (Opcao == "5") { break; }
-    else { Console.WriteLine("Opção inexistente. Digite novamente."); }
-} while (Opcao != "5");
-
+menuPrincipal.Iniciar();
 void CadastrarCarro() {
     Carro carro = new Carro();
     Console.WriteLine("Placa:");
@@ -37,7 +20,6 @@ void CadastrarCarro() {
     carro.Marca = Console.ReadLine();
     ListaDeCarros.Add(carro);
 }
-
 Carro ObterCarro()
 {
     Console.WriteLine("Placa:");
@@ -52,7 +34,6 @@ Carro ObterCarro()
     }
     return null;
 }
-
 void GerarTicket()
 {
     try
@@ -83,7 +64,7 @@ void GerarTicket()
                         carro.listaDeTickets.Add(novoTicket);
                         Console.WriteLine("Entrada Placa: {0}", carro.Placa);
                     }
-                    else { Console.WriteLine("Ticket Ativo == True"); }
+                    else { Console.WriteLine("Placa: {0} com ticket ativo", carro.Placa); }
                 }
             }
         }
@@ -93,7 +74,6 @@ void GerarTicket()
         Console.WriteLine(e.Message);
     }
 }
-
 void Historico()
 {
     Carro carro = ObterCarro();
@@ -104,10 +84,16 @@ void Historico()
     }
     foreach (Ticket ticket in carro.listaDeTickets)
     {
-        Console.WriteLine(String.Format("Entrada: {0} --- Saida: {1} --- Valores Pagos: {2:C}", ticket.Entrada, ticket.Saida, Convert.ToInt32(ticket.CalcularValor())));
+        if (ticket.Ativo)
+        {
+            Console.WriteLine("Placa: {0} --- Entrada: {0}", carro.Placa, ticket.Entrada);
+        }
+        else
+        {
+            Console.WriteLine(String.Format("Entrada: {0} --- Saida: {1} --- Valores Pagos: {2:C}", ticket.Entrada, ticket.Saida, Convert.ToInt32(ticket.CalcularValor())));
+        }
     }
 }
-
 void FecharTicket()
 {
     try
@@ -131,6 +117,10 @@ void FecharTicket()
                     ticket.Saida = DateTime.Now;
                     ticket.Ativo = false;
                     Console.WriteLine("Saída Placa: {0}", carro.Placa);
+                }
+                else
+                {
+                    Console.WriteLine("Placa: {0} sem ticket ativo", carro.Placa);
                 }
             }
         }

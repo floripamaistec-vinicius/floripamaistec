@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace pareAqui
 {
     public class Ticket
@@ -11,7 +10,6 @@ namespace pareAqui
         public DateTime Entrada { get; set; }
         public DateTime Saida { get; set; }
         public bool Ativo { get; set; }
-
         public Ticket() { }
         public Ticket(DateTime entrada, DateTime saida, bool ativo) :this()
         {

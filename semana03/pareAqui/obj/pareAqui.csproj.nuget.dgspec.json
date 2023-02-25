@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\floripamaistec\\semana03\\pareAqui\\pareAqui.csproj": {}
+    "D:\\floripamaistec\\semana-01-03\\semana03\\pareAqui\\pareAqui.csproj": {}
   },
   "projects": {
-    "D:\\floripamaistec\\semana03\\pareAqui\\pareAqui.csproj": {
+    "D:\\floripamaistec\\semana-01-03\\semana03\\pareAqui\\pareAqui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\floripamaistec\\semana03\\pareAqui\\pareAqui.csproj",
+        "projectUniqueName": "D:\\floripamaistec\\semana-01-03\\semana03\\pareAqui\\pareAqui.csproj",
         "projectName": "pareAqui",
-        "projectPath": "D:\\floripamaistec\\semana03\\pareAqui\\pareAqui.csproj",
+        "projectPath": "D:\\floripamaistec\\semana-01-03\\semana03\\pareAqui\\pareAqui.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\floripamaistec\\semana03\\pareAqui\\obj\\",
+        "outputPath": "D:\\floripamaistec\\semana-01-03\\semana03\\pareAqui\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
