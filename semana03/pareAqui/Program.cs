@@ -55,29 +55,42 @@ Carro ObterCarro()
 
 void GerarTicket()
 {
-    //try catch aqui
-    Carro carro = ObterCarro();
-    if (carro.listaDeTickets.Count == 0)
+    try
     {
-        Ticket novoTicket = new Ticket();
-        novoTicket.Entrada = DateTime.Now;
-        novoTicket.Ativo = true;
-        carro.listaDeTickets.Add(novoTicket);
-    }
-    else
-    {
-        foreach (Ticket ticket in carro.listaDeTickets)
+        Carro carro = ObterCarro();
+        if (carro is null)
         {
-            if (ticket.Ativo = false)
+            throw new ArgumentNullException("Veículo não cadastrado");
+        }
+        else
+        {
+            if (carro.listaDeTickets.Count == 0)
             {
                 Ticket novoTicket = new Ticket();
                 novoTicket.Entrada = DateTime.Now;
                 novoTicket.Ativo = true;
                 carro.listaDeTickets.Add(novoTicket);
-                Console.WriteLine("Entrada Placa: {0}", carro.Placa);
             }
-            else { Console.WriteLine("Ticket Ativo == True"); }
+            else
+            {
+                foreach (Ticket ticket in carro.listaDeTickets)
+                {
+                    if (ticket.Ativo = false)
+                    {
+                        Ticket novoTicket = new Ticket();
+                        novoTicket.Entrada = DateTime.Now;
+                        novoTicket.Ativo = true;
+                        carro.listaDeTickets.Add(novoTicket);
+                        Console.WriteLine("Entrada Placa: {0}", carro.Placa);
+                    }
+                    else { Console.WriteLine("Ticket Ativo == True"); }
+                }
+            }
         }
+    }
+    catch (ArgumentNullException e)
+    {
+        Console.WriteLine(e.Message);
     }
 }
 
@@ -97,19 +110,33 @@ void Historico()
 
 void FecharTicket()
 {
-    Carro carro = ObterCarro();
-    if (carro.listaDeTickets.Count == 0)
+    try
     {
-        Console.WriteLine("Veículo sem ticket cadastrado.");
-        return;
-    }
-    foreach (Ticket ticket in carro.listaDeTickets)
-    {
-        if (ticket.Ativo == true)
+        Carro carro = ObterCarro();
+        if (carro is null)
         {
-            ticket.Saida = DateTime.Now;
-            ticket.Ativo = false;
-            Console.WriteLine("Saída Placa: {0}", carro.Placa);
+            throw new ArgumentNullException("Veículo não cadastrado");
         }
+        else
+        {
+            if (carro.listaDeTickets.Count == 0)
+            {
+                Console.WriteLine("Veículo sem ticket cadastrado.");
+                return;
+            }
+            foreach (Ticket ticket in carro.listaDeTickets)
+            {
+                if (ticket.Ativo == true)
+                {
+                    ticket.Saida = DateTime.Now;
+                    ticket.Ativo = false;
+                    Console.WriteLine("Saída Placa: {0}", carro.Placa);
+                }
+            }
+        }
+    }
+    catch (ArgumentNullException e)
+    {
+        Console.WriteLine(e.Message);
     }
 }
