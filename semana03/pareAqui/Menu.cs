@@ -8,6 +8,7 @@
         }
         private static string EscreverTextoDoMenuPrincipal()
         {
+            Console.Clear();
             Console.WriteLine("Estacionamento pareAqui.");
             Console.WriteLine("Escolha uma opção:");
             Console.WriteLine("1 - Veículo: Cadastrar");

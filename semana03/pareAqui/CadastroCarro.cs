@@ -10,12 +10,12 @@
             {
                 PreencherFormularioDeVeiculo(Placa);
                 Console.WriteLine("Placa: {0}", ListaDeCarros.Last().Placa);
-                Console.WriteLine("Cadastro criado.");
+                Console.WriteLine("Cadastro efetuado.");
             }
             else
             {
                 Console.WriteLine("Placa: {0}", Placa);
-                Console.WriteLine("Cadastro criado anteriormente.");
+                Console.WriteLine("Cadastro efetuado anteriormente.");
             }
         }
         private static string InformarPlaca()

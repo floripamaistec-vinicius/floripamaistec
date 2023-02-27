@@ -9,7 +9,7 @@
                 Carro carro = CadastroCarro.ConsultarPlacaNoCadastroDeCarros();
                 if (carro == null)
                 {
-                    throw new CarroNaoCadastradoException("Carro não cadastrado");
+                    throw new CarroNaoCadastradoException("Carro inexistente.");
                 }
                 else
                 {
@@ -47,7 +47,7 @@
                 else
                 {
                     Console.WriteLine("Placa: {0}", carro.Placa);
-                    Console.WriteLine("Ticket Ativo cadastrado anteriormente.");
+                    Console.WriteLine("Ticket Ativo inexistente.");
                 }
             }
         }
@@ -56,7 +56,7 @@
             if (carro.listaDeTickets.Count() == 0)
             {
                 Console.WriteLine("Placa: {0}", carro.Placa);
-                Console.WriteLine("Ticket Ativo não cadastrado anteriormente.");
+                Console.WriteLine("Ticket Ativo inexistente.");
             }
             else
             {
@@ -64,7 +64,7 @@
                 if (ticket.Ativo == true)
                 {
                     Console.WriteLine("Placa: {0}", carro.Placa);
-                    Console.WriteLine("Ticket Ativo cadastrado anteriormente.");
+                    Console.WriteLine("Ticket Ativo existente.");
                 }
                 else
                 {
