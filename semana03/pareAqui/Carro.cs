@@ -9,7 +9,7 @@
         public string Marca { get; set; }
         */
         public bool Ativo { get; set; }
-        public static List<Ticket> listaDeTickets { get; set; }
+        public List<Ticket> listaDeTickets { get; set; }
         public Carro() {
             listaDeTickets = new List<Ticket>();
         }

@@ -7,16 +7,69 @@
             try
             {
                 Carro carro = CadastroCarro.ConsultarPlacaNoCadastroDeCarros();
-
+                if (carro == null)
+                {
+                    throw new ArgumentNullException("Carro não cadastrado.");
+                }
+                else
+                {
+                    if (PesquisarTicket(carro).Ativo == true)
+                    {
+                        Console.WriteLine("Placa: {0}", carro.Placa);
+                        Console.WriteLine("Ticket Ativo cadastrado anteriormente.");
+                    }
+                    else
+                    {
+                        PreencherTicketEntrada();
+                    }
+                }
             }
-            catch (Exception exception)
+            catch (ArgumentNullException exception)
             {
                 Console.WriteLine(exception.Message);
             }
         }
         public static void CadastrarSaida()
         {
-            Console.WriteLine();
+            try
+            {
+                Carro carro = CadastroCarro.ConsultarPlacaNoCadastroDeCarros();
+                if (carro == null)
+                {
+                    throw new ArgumentNullException("Carro não cadastrado.");
+                }
+                else
+                {
+                    if (carro.listaDeTickets.Last().Ativo == false)
+                    {
+                        Console.WriteLine("Placa: {0}", carro.Placa);
+                        Console.WriteLine("Ticket Ativo não cadastrado.");
+                    }
+                    else
+                    {
+                        PreencherTicketSaida(PesquisarTicket(carro));
+                    }
+                }
+            }
+            catch (ArgumentNullException exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+        }
+        private static Ticket PesquisarTicket(Carro carro)
+        {
+            return carro.listaDeTickets.Last();
+        }
+        private static void PreencherTicketEntrada()
+        {
+            Ticket ticket = new Ticket();
+            ticket.Entrada = DateTime.Now;
+            ticket.Ativo = false;
+        }
+        private static void PreencherTicketSaida(Ticket ticket)
+        {
+            ticket.Saida = DateTime.Now;
+            ticket.Ativo = true;
         }
     }
 }
