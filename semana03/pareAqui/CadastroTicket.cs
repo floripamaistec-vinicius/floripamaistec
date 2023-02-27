@@ -2,69 +2,86 @@
 {
     public class CadastroTicket
     {
-        public static void CadastrarEntrada()
+        public static void TryCatchCarro(string Opcao)
         {
             try
             {
                 Carro carro = CadastroCarro.ConsultarPlacaNoCadastroDeCarros();
                 if (carro == null)
                 {
-                    throw new ArgumentNullException("Carro não cadastrado.");
+                    throw new CarroNaoCadastradoException("Carro não cadastrado");
                 }
                 else
                 {
-                    if (PesquisarTicket(carro).Ativo == true)
-                    {
-                        Console.WriteLine("Placa: {0}", carro.Placa);
-                        Console.WriteLine("Ticket Ativo cadastrado anteriormente.");
-                    }
-                    else
-                    {
-                        PreencherTicketEntrada();
-                    }
+                    IFElseTryCatchCarro(Opcao, carro);
                 }
             }
-            catch (ArgumentNullException exception)
+            catch (CarroNaoCadastradoException exception)
             {
                 Console.WriteLine(exception.Message);
             }
         }
-        public static void CadastrarSaida()
+        static private void IFElseTryCatchCarro(String Opcao, Carro carro)
         {
-            try
+            if (Opcao == "4")
             {
-                Carro carro = CadastroCarro.ConsultarPlacaNoCadastroDeCarros();
-                if (carro == null)
+                CadastrarEntrada(carro);
+            }
+            else
+            {
+                CadastrarSaida(carro);
+            }
+        }
+        private static void CadastrarEntrada(Carro carro)
+        {
+            if (carro.listaDeTickets.Count() == 0)
+            {
+                PreencherTicketEntrada(carro);
+            }
+            else
+            {
+                if (PesquisarTicket(carro).Ativo == true)
                 {
-                    throw new ArgumentNullException("Carro não cadastrado.");
+                    PreencherTicketEntrada(carro);
                 }
                 else
                 {
-                    if (carro.listaDeTickets.Last().Ativo == false)
-                    {
-                        Console.WriteLine("Placa: {0}", carro.Placa);
-                        Console.WriteLine("Ticket Ativo não cadastrado.");
-                    }
-                    else
-                    {
-                        PreencherTicketSaida(PesquisarTicket(carro));
-                    }
+                    Console.WriteLine("Placa: {0}", carro.Placa);
+                    Console.WriteLine("Ticket Ativo cadastrado anteriormente.");
                 }
             }
-            catch (ArgumentNullException exception)
+        }
+        private static void CadastrarSaida(Carro carro)
+        {
+            if (carro.listaDeTickets.Count() == 0)
             {
-                Console.WriteLine(exception.Message);
+                Console.WriteLine("Placa: {0}", carro.Placa);
+                Console.WriteLine("Ticket Ativo não cadastrado anteriormente.");
+            }
+            else
+            {
+                Ticket ticket = PesquisarTicket(carro);
+                if (ticket.Ativo == true)
+                {
+                    Console.WriteLine("Placa: {0}", carro.Placa);
+                    Console.WriteLine("Ticket Ativo cadastrado anteriormente.");
+                }
+                else
+                {
+                    PreencherTicketSaida(ticket);
+                }
             }
         }
         private static Ticket PesquisarTicket(Carro carro)
         {
             return carro.listaDeTickets.Last();
         }
-        private static void PreencherTicketEntrada()
+        private static void PreencherTicketEntrada(Carro carro)
         {
             Ticket ticket = new Ticket();
             ticket.Entrada = DateTime.Now;
             ticket.Ativo = false;
+            carro.listaDeTickets.Add(ticket);
         }
         private static void PreencherTicketSaida(Ticket ticket)
         {
@@ -73,42 +90,3 @@
         }
     }
 }
-/*
-try
-{
-    Carro carro = ObterCarro();
-    if (carro is null)
-    {
-        throw new ArgumentNullException("Veículo não cadastrado");
-    }
-    else
-    {
-        if (carro.listaDeTickets.Count == 0)
-        {
-            Ticket novoTicket = new Ticket();
-            novoTicket.Entrada = DateTime.Now;
-            novoTicket.Ativo = true;
-            carro.listaDeTickets.Add(novoTicket);
-        }
-        else
-        {
-            foreach (Ticket ticket in carro.listaDeTickets)
-            {
-                if (ticket.Ativo = false)
-                {
-                    Ticket novoTicket = new Ticket();
-                    novoTicket.Entrada = DateTime.Now;
-                    novoTicket.Ativo = true;
-                    carro.listaDeTickets.Add(novoTicket);
-                    Console.WriteLine("Entrada Placa: {0}", carro.Placa);
-                }
-                else { Console.WriteLine("Placa: {0} com ticket ativo", carro.Placa); }
-            }
-        }
-    }
-}
-catch (ArgumentNullException e)
-{
-    Console.WriteLine(e.Message);
-}
-*/

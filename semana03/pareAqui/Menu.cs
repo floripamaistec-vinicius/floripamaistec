@@ -30,9 +30,9 @@
                     case "2":
                         CadastroCarro.CadastrarCarro(); break;
                     case "3":
-                        CadastroTicket.CadastrarEntrada(); break;
+                        CadastroTicket.TryCatchCarro(Opcao); break;
                     case "4":
-                        CadastroTicket.CadastrarSaida(); break;
+                        CadastroTicket.TryCatchCarro(Opcao); break;
                     case "5":
                         break;
                     default: Console.WriteLine("Opção inexistente."); break;
