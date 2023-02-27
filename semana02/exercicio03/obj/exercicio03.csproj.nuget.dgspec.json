@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\floripamaistec\\semana02\\exercicio03\\exercicio03.csproj": {}
+    "D:\\floripamaistec\\semana-01-03\\semana02\\exercicio03\\exercicio03.csproj": {}
   },
   "projects": {
-    "D:\\floripamaistec\\semana02\\exercicio03\\exercicio03.csproj": {
+    "D:\\floripamaistec\\semana-01-03\\semana02\\exercicio03\\exercicio03.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\floripamaistec\\semana02\\exercicio03\\exercicio03.csproj",
+        "projectUniqueName": "D:\\floripamaistec\\semana-01-03\\semana02\\exercicio03\\exercicio03.csproj",
         "projectName": "exercicio03",
-        "projectPath": "D:\\floripamaistec\\semana02\\exercicio03\\exercicio03.csproj",
+        "projectPath": "D:\\floripamaistec\\semana-01-03\\semana02\\exercicio03\\exercicio03.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\floripamaistec\\semana02\\exercicio03\\obj\\",
+        "outputPath": "D:\\floripamaistec\\semana-01-03\\semana02\\exercicio03\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
