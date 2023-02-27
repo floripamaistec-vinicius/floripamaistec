@@ -2,12 +2,11 @@
 {
     public class Menu
     {
-        CadastroCarro cadastroCarro = new CadastroCarro();
         public void MenuPrincipal()
         {
             ExecutarOpcaoEscolhida();
         }
-        private string EscreverTextoDoMenuPrincipal()
+        private static string EscreverTextoDoMenuPrincipal()
         {
             Console.WriteLine("Estacionamento pareAqui.");
             Console.WriteLine("Escolha uma opção:");
@@ -18,7 +17,7 @@
             Console.WriteLine("5 - Sair");
             return Console.ReadLine();
         }
-        private void ExecutarOpcaoEscolhida()
+        private static void ExecutarOpcaoEscolhida()
         {
             string Opcao;
             do
@@ -27,15 +26,16 @@
                 switch (Opcao)
                 {
                     case "1":
-                        cadastroCarro.CadastrarCarro(); break;
+                        CadastroCarro.CadastrarCarro(); break;
                     case "2":
-                        cadastroCarro.CadastrarCarro(); break;
+                        CadastroCarro.CadastrarCarro(); break;
                     case "3":
-                        cadastroCarro.CadastrarCarro(); break;
+                        CadastroTicket.CadastrarEntrada(); break;
                     case "4":
-                        cadastroCarro.CadastrarCarro(); break;
+                        CadastroTicket.CadastrarSaida(); break;
                     case "5":
                         break;
+                    default: Console.WriteLine("Opção inexistente."); break;
                 }
             }
             while (Opcao != "5");

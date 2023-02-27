@@ -1,17 +1,16 @@
-﻿
-using System.Numerics;
-
-namespace pareAqui
+﻿namespace pareAqui
 {
     public class CadastroCarro
     {
-        static List<Carro> ListaDeCarros = new List<Carro>();
-        public void CadastrarCarro()
+        public static List<Carro> ListaDeCarros = new List<Carro>();
+        public static void CadastrarCarro()
         {
             string Placa = InformarPlaca();
             if (VerificarPlaca(Placa) == null)
             {
-                PreencherFormularioVeiculo(Placa);
+                PreencherFormularioDeVeiculo(Placa);
+                Console.WriteLine("Placa: {0}", ListaDeCarros.Last().Placa);
+                Console.WriteLine("Cadastro criado.");
             }
             else
             {
@@ -19,12 +18,12 @@ namespace pareAqui
                 Console.WriteLine("Cadastro criado anteriormente.");
             }
         }
-        private string InformarPlaca()
+        private static string InformarPlaca()
         {
             Console.WriteLine("Placa:");
             return Console.ReadLine();
         }
-        private Carro VerificarPlaca(string Placa)
+        private static Carro VerificarPlaca(string Placa)
         {
             for (int index = 0; index < ListaDeCarros.Count(); index++)
             {
@@ -35,12 +34,17 @@ namespace pareAqui
             }
             return null;
         }
-        private void PreencherFormularioVeiculo(string Placa)
+        private static void PreencherFormularioDeVeiculo(string Placa)
         {
             Carro carro = new Carro();
             carro.Placa = Placa;
             carro.Ativo = true;
             ListaDeCarros.Add(carro);
+        }
+
+        public static Carro ConsultarPlacaNoCadastroDeCarros()
+        {
+            return VerificarPlaca(InformarPlaca());
         }
     }
 }
