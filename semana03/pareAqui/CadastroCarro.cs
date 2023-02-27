@@ -3,22 +3,29 @@
     public class CadastroCarro
     {
         public static List<Carro> ListaDeCarros = new List<Carro>();
-        public static void CadastrarCarro()
+        public static void CadastrarCarro(string Placa)
         {
-            string Placa = InformarPlaca();
             if (VerificarPlaca(Placa) == null)
             {
                 PreencherFormularioDeVeiculo(Placa);
-                Console.WriteLine("Placa: {0}", ListaDeCarros.Last().Placa);
-                Console.WriteLine("Cadastro efetuado.");
             }
             else
             {
-                Console.WriteLine("Placa: {0}", Placa);
                 Console.WriteLine("Cadastro efetuado anteriormente.");
             }
         }
-        private static string InformarPlaca()
+        public static void ConsultarHistorico(Carro carro)
+        {
+            if (carro.Placa == null)
+            {
+                Console.WriteLine("Cadastro inexistente.");
+            }
+            else
+            {
+                CadastroTicket.ListarTickets(carro);
+            }
+        }
+        public static string InformarPlaca()
         {
             Console.WriteLine("Placa:");
             return Console.ReadLine();
@@ -39,7 +46,17 @@
             Carro carro = new Carro();
             carro.Placa = Placa;
             carro.Ativo = true;
+            CompletarFormulario(carro);
             ListaDeCarros.Add(carro);
+        }
+        private static void CompletarFormulario(Carro carro)
+        {
+            Console.WriteLine("Modelo:");
+            carro.Modelo = Console.ReadLine();
+            Console.WriteLine("Cor:");
+            carro.Cor = Console.ReadLine();
+            Console.WriteLine("Marca:");
+            carro.Marca = Console.ReadLine();
         }
 
         public static Carro ConsultarPlacaNoCadastroDeCarros()

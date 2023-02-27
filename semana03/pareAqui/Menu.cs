@@ -8,7 +8,6 @@
         }
         private static string EscreverTextoDoMenuPrincipal()
         {
-            Console.Clear();
             Console.WriteLine("Estacionamento pareAqui.");
             Console.WriteLine("Escolha uma opção:");
             Console.WriteLine("1 - Veículo: Cadastrar");
@@ -27,13 +26,13 @@
                 switch (Opcao)
                 {
                     case "1":
-                        CadastroCarro.CadastrarCarro(); break;
+                        CadastroCarro.CadastrarCarro(CadastroCarro.InformarPlaca()); break;
                     case "2":
-                        CadastroCarro.CadastrarCarro(); break;
+                        CarroNaoCadastradoException.TryCatchCarro(Opcao); break;
                     case "3":
-                        CadastroTicket.TryCatchCarro(Opcao); break;
+                        CarroNaoCadastradoException.TryCatchCarro(Opcao); break;
                     case "4":
-                        CadastroTicket.TryCatchCarro(Opcao); break;
+                        CarroNaoCadastradoException.TryCatchCarro(Opcao); break;
                     case "5":
                         break;
                     default: Console.WriteLine("Opção inexistente."); break;

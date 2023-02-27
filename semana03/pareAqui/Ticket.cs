@@ -12,14 +12,14 @@
             Saida = saida;
             Ativo = ativo;
         }
-        public double CalcularTempo()
+        private double CalcularTempo()
         {
             TimeSpan tempo = Saida - Entrada;
-            return tempo.TotalMinutes;
+            return tempo.TotalSeconds;
         }
         public double CalcularValor()
         {
-            double valor = CalcularTempo() * 0.09;
+            double valor = CalcularTempo() * 1;
             return valor;
         }
     }
